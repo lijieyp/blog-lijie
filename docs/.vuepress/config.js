@@ -1,6 +1,6 @@
 module.exports = {
     base: '/blog-lijie/',
-    title: 'blog-lijie',
+    title: '李杰的博客',
     description: 'Vuepress blog lijie',
     themeConfig: {
         // 你的GitHub仓库，请正确填写
@@ -8,12 +8,13 @@ module.exports = {
         // 自定义仓库链接文字。
         repoLabel: 'My GitHub',
         nav: [
-            { text: 'Home', link: '/' },
-            { text: 'FirstBlog', link: '/blog/FirstBlog.md' }
-        ],
-        sidebar: [
-            ['/', '首页'],
-            ['/blog/FirstBlog.md', '我的第一篇博客']
+            { text: '首页', link: '/' },
+            { 
+                text: '总结', link: '/blog/',
+                items:[
+                    {text:'npm',link:'/blog/FirstBlog.md'}
+                ]
+            }
         ]
     }
 }
