@@ -10,11 +10,14 @@ module.exports = {
         nav: [
             { text: '首页', link: '/' },
             { 
-                text: '总结', link: '/blog/',
-                items:[
-                    {text:'npm',link:'/blog/FirstBlog.md'}
-                ]
+                text: '总结', link: '/blog/'
             }
-        ]
+        ],
+        sidebar:
+        {
+            '/blog/':[
+                '',
+            ]
+        }
     }
 }
