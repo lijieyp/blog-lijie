@@ -14,11 +14,11 @@ node模块就是发布到npm的代码包， 创建一个新模块的第一步就
 
 #### 设置版本号
 找到工程中的package.json文件，修改版本号
-![Image from alias](../assets/image/version.png)
+![Image from alias](../../assets/image/version.png)
 
 ####  命令行登录
    登录终端输入 npm login 命令，按照提示完成即可**注意要使用官方的镜像源**
-![Image from alias](../assets/image/npm_login.png)
+![Image from alias](../../assets/image/npm_login.png)
 
 ####  开始发布
 #### npm包实现发布正式版和测试版
