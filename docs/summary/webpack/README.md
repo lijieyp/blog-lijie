@@ -1,4 +1,6 @@
-# 安装
+# webpack配置
+
+## 安装
 
 - 需要先在项目中npm init初始化一下，生成package.json
 - 建议node版本安装到8.2以上
@@ -10,7 +12,7 @@ npm i webpack webpack-cli -D
 
 npm i -D 是 npm install --save-dev 的简写，是指安装模块并保存到 package.json 的 devDependencies中，主要在开发环境中的依赖包
 
-# 运行
+## 运行
 
 webpack4可以支持0配置打包，这里所说的0配置又是什么呢？当然在开发者眼中0配置的东西，那根本是无法用的，因为不够智能，那么我们就来看看做到了哪些0配置。
 
@@ -27,7 +29,7 @@ npx webpack --mode development  // 设置mode为开发模式，打包后的文�
 
 当执行npx webpack命令的时候，webpack会自动查找项目中src目录下的index.js文件，然后进行打包，生成一个dist目录并存在一个打包好的main.js文件
 
-# 配置
+配置
 
 在项目下创建一个webpack.config.js(默认，可修改)文件来配置webpack
 
@@ -64,7 +66,7 @@ module.exports = {
 
 上面就可以说是实现了最简单的webpack配置了，那接下来就打包一下看看
 
-# 配置执行文件
+## 配置执行文件
 
 工作当中我们打包编译的时候一般都执行npm run dev这样的命令，既然是通过npm执行的命令，我们就应该找到package.json里的执行脚本去配置一下命令
 
@@ -72,7 +74,7 @@ module.exports = {
 **npm run dev**是我们开发环境下打包的文件，当然由于devServer帮我们把文件放到内存中了，所以并不会输出打包后的dist文件夹
 通过npm run build之后会生成一个dist目录文件夹，就和上面打包后的样子一样了
 
-# 多入口文件
+## 多入口文件
 
 多个入口可以有两种实现方式进行打包
 
@@ -100,7 +102,7 @@ module.exports = {
 }
 ```
 
-# 配置html模板
+### 配置html模板
 
 文件都打包好了，但是我们在使用的时候不能在dist目录下去创建一个html文件，然后去引用打包后的js吧，这不合理，实际开发中也不会这样
 我们需要实现html打包功能，可以通过一个模板实现打包出引用好路径的html来
@@ -221,7 +223,7 @@ module.exports = {
 - 此时打包后的css文件是以行内样式style的标签写进打包后的html页面中，如果样式很多的话，我们更希望直接用link的方式引入进去，这时候需要把css拆分出来
 - **extract-text-webpack-plugin**插件相信用过的人都知道它是干什么的，它的功效就在于会将打包到js里的css文件进行一个拆分
 
-#### 拆分CSS
+拆分CSS
 
 ```
 // @next表示可以支持webpack4版本的插件
@@ -322,7 +324,7 @@ module.exports = {
 }
 ```
 
-# 引用图片
+## 引用图片
 
 处理图片方面，也需要loader
 
@@ -362,7 +364,7 @@ module.exports = {
 
 在css中指定了publicPath路径这样就可以根据相对路径引用到图片资源了
 
-#### 页面img引用图片
+### 页面img引用图片
 
 页面中经常会用到img标签，img引用的图片地址也需要一个loader来帮我们处理好
 
@@ -385,7 +387,7 @@ module.exports = {
 
 这样再打包后的html文件下img就可以正常引用图片路径了
 
-#### 引用字体图片和svg图片
+### 引用字体图片和svg图片
 
 字体图标和svg图片都可以通过file-loader来解析
 
@@ -404,7 +406,7 @@ module.exports = {
 
 这样即使样式中引入了这类格式的图标或者图片都没有问题了，img如果也引用svg格式的话，配合上面写好的html-withimg-loader就都没有问题了
 
-# 添加CSS3前缀
+## 添加CSS3前缀
 
 通过postcss中的autoprefixer可以实现将CSS3中的一些需要兼容写法的属性添加响应的前缀，这样省去我们不少的时间
 
@@ -437,7 +439,7 @@ module.exports = {
 }
 ```
 
-# 转义ES6
+## 转义ES6
 
 在实际开发中，我们在大量的使用着ES6及之后的api去写代码，这样会提高我们写代码的速度，不过由于低版本浏览器的存在，不得不需要转换成兼容的代码，于是就有了常用的Babel了
 Babel会将ES6的代码转成ES5的代码

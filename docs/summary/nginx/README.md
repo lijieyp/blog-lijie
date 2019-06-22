@@ -1,4 +1,4 @@
-# 一.准备工作
+## 一.准备工作
 
 下载PuTTy软件，远程连接阿里云.
 
@@ -14,15 +14,15 @@
 
 
 
-# 二.开始
+## 二.开始
 
-#### 1.用yum进行安装必要的程序
+### 1.用yum进行安装必要的程序
 
 ​		yum -y install gcc gcc-c++ autoconf pcre-devel make automake
 
 ​		yum -y install wget httpd-tools vim
 
-#### 2.建立目录
+### 2.建立目录
 
 ​		cd / 进入跟目录
 
@@ -34,7 +34,7 @@
 
 ​		分别使用mkdir建立app，backup，download，logs，work文件夹
 
-# 三.搭建nginx环境
+## 三.搭建nginx环境
 
 ​		查看yum是否已经存在 yum list | grep nginx
 
@@ -62,7 +62,7 @@ enabled=1
 
 ​		查看nginx安装目录文件 rm -ql nginx
 
-# 四.nginx环境配置目录文件，到欢迎页面
+## 四.nginx环境配置目录文件，到欢迎页面
 
 ​		nginx.conf文件
 
@@ -80,7 +80,7 @@ enabled=1
 
 ​		学到这里，其实可以预想到，我们的nginx服务器已经可以为html提供服务器了。我们可以打开浏览器，访问ip地址试一试。
 
-# 五.nginx服务启动，停止，重启
+## 五.nginx服务启动，停止，重启
 
 - nginx		直接启动
 
@@ -95,9 +95,9 @@ enabled=1
 
 - netstat -tlnp           查看端口
 
-# 六.安装mongodb
+## 六.安装mongodb
 
-#### 1.在/etc/yum.repos.d 创建一个mongodb-org.repo 源文件
+### 1.在/etc/yum.repos.d 创建一个mongodb-org.repo 源文件
 
 ```
 [mongodb-org]
@@ -107,7 +107,7 @@ gpgcheck=0
 enabled=1
 ```
 
-#### 2.清空缓存和更新yum源
+### 2.清空缓存和更新yum源
 
 ```
 [root@qd-vpc-dev-op01 yum.repos.d]$ yum clean all
@@ -119,13 +119,13 @@ enabled=1
 [root@qd-vpc-dev-op01 yum.repos.d]$ yum update
 ```
 
-#### 3.安装mongodb
+### 3.安装mongodb
 
 ```
 [root@qd-vpc-dev-op01 yum.repos.d]$ yum install` `-y mongodb-org
 ```
 
-#### 4.mongodb 启动，停止
+### 4.mongodb 启动，停止
 
 ```
 启动mongodb：     systemctl start mongod.service
