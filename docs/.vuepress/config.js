@@ -20,6 +20,18 @@ module.exports = {
                     {text:'webpack',link:'/summary/webpack/'}
                 ]
             }
-        ]
+        ],
+        sidebar:{
+            '/summary/webpack/':[
+                '',
+                '/summary/webpack/webpack_loader'
+            ],
+            '/summary/nginx/':[
+                '',
+            ],
+            '/summary/npm/':[
+                '',
+            ]
+        }
     }
 }
