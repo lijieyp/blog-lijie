@@ -12,12 +12,15 @@ module.exports = {
         sidebarDepth: 2,
         nav: [
             { text: '首页', link: '/' },
+            { text: 'nginx', link: '/summary/nginx/' },
+            { text: 'webpack', link: '/summary/webpack/' },
+            { text: 'git', link: '/summary/git/' },
+            { text: 'vue', link: '/summary/vue/' },
             { 
                 text: '总结', link: '/summary/',
                 items:[
-                    {text:'nginx',link:'/summary/nginx/'},
-                    {text:'npm',link:'/summary/npm/'},
-                    {text:'webpack',link:'/summary/webpack/'}
+                    { text: 'npm', link: '/summary/npm/' },
+                    {text:'面试',link:'/summary/mianshi/'},
                 ]
             }
         ],
@@ -31,6 +34,13 @@ module.exports = {
             ],
             '/summary/npm/':[
                 '',
+            ],
+            '/summary/git/':[
+                '',
+            ],
+            '/summary/vue/':[
+                '',
+                '/summary/vue/compatible'
             ]
         }
     }
