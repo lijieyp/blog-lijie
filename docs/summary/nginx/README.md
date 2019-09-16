@@ -24,17 +24,6 @@
 
 ​		yum -y install wget httpd-tools vim
 
-### 2.建立目录
-
-​		cd / 进入跟目录
-
-​		ls 查看目录文件
-
-​		在目录下建立一个统一文件夹testDemo
-
-​		进入testDemo文件夹 cd testDemo
-
-​		分别使用mkdir建立app，backup，download，logs，work文件夹
 
 ## 三.搭建nginx环境
 

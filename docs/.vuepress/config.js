@@ -16,11 +16,13 @@ module.exports = {
             { text: 'webpack', link: '/summary/webpack/' },
             { text: 'git', link: '/summary/git/' },
             { text: 'vue', link: '/summary/vue/' },
+            { text: '转载', link: '/summary/reprint/' },
             { 
                 text: '总结', link: '/summary/',
                 items:[
                     { text: 'npm', link: '/summary/npm/' },
-                    {text:'面试',link:'/summary/mianshi/'},
+                    { text: '插件', link: '/summary/plugins/' },
+                    { text: '面试', link:'/summary/mianshi/' },
                 ]
             }
         ],
@@ -38,9 +40,17 @@ module.exports = {
             '/summary/git/':[
                 '',
             ],
+            '/summary/plugins/':[
+                '',
+            ],
             '/summary/vue/':[
                 '',
-                '/summary/vue/compatible'
+                '/summary/vue/compatible',
+                '/summary/vue/mobile'
+            ],
+            '/summary/reprint/':[
+                '',
+                '/summary/reprint/vueRouter'
             ]
         }
     }
