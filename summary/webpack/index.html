@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack配置 | 李杰的博客</title>
+    <meta name="description" content="Vuepress blog lijie">
+    
+    
+    <link rel="preload" href="/blog-lijie/assets/css/0.styles.9a23e2da.css" as="style"><link rel="preload" href="/blog-lijie/assets/js/app.c84d788b.js" as="script"><link rel="preload" href="/blog-lijie/assets/js/2.06a6629a.js" as="script"><link rel="preload" href="/blog-lijie/assets/js/18.2c4a4640.js" as="script"><link rel="prefetch" href="/blog-lijie/assets/js/10.cb311e20.js"><link rel="prefetch" href="/blog-lijie/assets/js/11.0cef8909.js"><link rel="prefetch" href="/blog-lijie/assets/js/12.68e0e621.js"><link rel="prefetch" href="/blog-lijie/assets/js/13.c86b31eb.js"><link rel="prefetch" href="/blog-lijie/assets/js/14.ba25eb8a.js"><link rel="prefetch" href="/blog-lijie/assets/js/15.2e339e9a.js"><link rel="prefetch" href="/blog-lijie/assets/js/16.0179fcb1.js"><link rel="prefetch" href="/blog-lijie/assets/js/17.bd1cbb62.js"><link rel="prefetch" href="/blog-lijie/assets/js/19.6e587a7d.js"><link rel="prefetch" href="/blog-lijie/assets/js/20.35183c29.js"><link rel="prefetch" href="/blog-lijie/assets/js/3.c699bf6b.js"><link rel="prefetch" href="/blog-lijie/assets/js/4.cd628cd7.js"><link rel="prefetch" href="/blog-lijie/assets/js/5.2933ec46.js"><link rel="prefetch" href="/blog-lijie/assets/js/6.a51c015f.js"><link rel="prefetch" href="/blog-lijie/assets/js/7.dc161ca2.js"><link rel="prefetch" href="/blog-lijie/assets/js/8.6fea0b04.js"><link rel="prefetch" href="/blog-lijie/assets/js/9.d59d0b22.js">
+    <link rel="stylesheet" href="/blog-lijie/assets/css/0.styles.9a23e2da.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog-lijie/" class="home-link router-link-active"><!----> <span class="site-name">李杰的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog-lijie/" class="nav-link">首页</a></div><div class="nav-item"><a href="/blog-lijie/summary/nginx/" class="nav-link">nginx</a></div><div class="nav-item"><a href="/blog-lijie/summary/webpack/" class="nav-link router-link-exact-active router-link-active">webpack</a></div><div class="nav-item"><a href="/blog-lijie/summary/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/blog-lijie/summary/vue/" class="nav-link">vue</a></div><div class="nav-item"><a href="/blog-lijie/summary/reprint/" class="nav-link">转载</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/npm/" class="nav-link">npm</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/plugins/" class="nav-link">插件</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/mianshi/" class="nav-link">面试</a></li></ul></div></div> <a href="https://github.com/lijieyp/blog-lijie" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog-lijie/" class="nav-link">首页</a></div><div class="nav-item"><a href="/blog-lijie/summary/nginx/" class="nav-link">nginx</a></div><div class="nav-item"><a href="/blog-lijie/summary/webpack/" class="nav-link router-link-exact-active router-link-active">webpack</a></div><div class="nav-item"><a href="/blog-lijie/summary/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/blog-lijie/summary/vue/" class="nav-link">vue</a></div><div class="nav-item"><a href="/blog-lijie/summary/reprint/" class="nav-link">转载</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/npm/" class="nav-link">npm</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/plugins/" class="nav-link">插件</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/mianshi/" class="nav-link">面试</a></li></ul></div></div> <a href="https://github.com/lijieyp/blog-lijie" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog-lijie/summary/webpack/" class="active sidebar-link">webpack配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#运行" class="sidebar-link">运行</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#配置执行文件" class="sidebar-link">配置执行文件</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#多入口文件" class="sidebar-link">多入口文件</a></li></ul></li><li><a href="/blog-lijie/summary/webpack/webpack_loader.html" class="sidebar-link">loader和插件的使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#css样式处理" class="sidebar-link">CSS样式处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#插入到style标签" class="sidebar-link">插入到style标签</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#抽离单独css文件，link标签引入" class="sidebar-link">抽离单独css文件，link标签引入</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#添加css3前缀" class="sidebar-link">添加CSS3前缀</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#转化es6语法" class="sidebar-link">转化ES6语法</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#js语法校验" class="sidebar-link">js语法校验</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#全局变量引入问题" class="sidebar-link">全局变量引入问题</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#图片处理" class="sidebar-link">图片处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#页面img引用图片" class="sidebar-link">页面img引用图片</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#引用字体图片和svg图片" class="sidebar-link">引用字体图片和svg图片</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#清理dist目录" class="sidebar-link">清理dist目录</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#html插件" class="sidebar-link">html插件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#多页面开发，怎么配置多页面" class="sidebar-link">多页面开发，怎么配置多页面</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#html，css，js的代码压缩" class="sidebar-link">html，CSS，js的代码压缩</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#文件指纹的生成" class="sidebar-link">文件指纹的生成</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#js文件指纹的设置" class="sidebar-link">js文件指纹的设置</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#css文件指纹的设置" class="sidebar-link">css文件指纹的设置</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#图片的文件指纹设置" class="sidebar-link">图片的文件指纹设置</a></li></ul></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack配置"><a href="#webpack配置" aria-hidden="true" class="header-anchor">#</a> webpack配置</h1> <h2 id="安装"><a href="#安装" aria-hidden="true" class="header-anchor">#</a> 安装</h2> <ul><li>需要先在项目中npm init初始化一下，生成package.json</li> <li>建议node版本安装到8.2以上</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// webpack4中除了正常安装webpack之外，需要再单独安一个webpack-cli
+npm i webpack webpack-cli -D
+</code></pre></div><p>npm i -D 是 npm install --save-dev 的简写，是指安装模块并保存到 package.json 的 devDependencies中，主要在开发环境中的依赖包</p> <h2 id="运行"><a href="#运行" aria-hidden="true" class="header-anchor">#</a> 运行</h2> <p>webpack4可以支持0配置打包，这里所说的0配置又是什么呢？当然在开发者眼中0配置的东西，那根本是无法用的，因为不够智能，那么我们就来看看做到了哪些0配置。</p> <p>在使用webpack进行打包的时候，默认情况下会将src下的入口文件(index.js)进行打包</p> <div class="language- extra-class"><pre class="language-text"><code>// node v8.2版本以后都会有一个npx
+// npx会执行bin里的文件
+
+npx webpack     // 不设置mode的情况下 打包出来的文件自动压缩
+
+npx webpack --mode development  // 设置mode为开发模式，打包后的文件不被压缩
+</code></pre></div><p>当执行npx webpack命令的时候，webpack会自动查找项目中src目录下的index.js文件，然后进行打包，生成一个dist目录并存在一个打包好的main.js文件</p> <p>配置</p> <p>在项目下创建一个webpack.config.js(默认，可修改)文件来配置webpack</p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    entry: '',               // 入口文件
+    output: {},              // 出口文件
+    module: {},              // 处理对应模块
+    plugins: [],             // 对应的插件
+    devServer: {},           // 开发服务器配置
+    mode: 'development'      // 模式配置
+}
+</code></pre></div><p>★ 启动devServer需要安装一下webpack-dev-server</p> <div class="language- extra-class"><pre class="language-text"><code>npm i webpack-dev-server -D
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// webpack.config.js
+
+const path = require('path');
+
+module.exports = {
+    entry: './src/index.js',    // 入口文件
+    output: {
+        filename: 'bundle.js',      // 打包后的文件名称
+        path: path.resolve('dist')  // 打包后的目录，必须是绝对路径
+    }
+}
+</code></pre></div><p>上面就可以说是实现了最简单的webpack配置了，那接下来就打包一下看看</p> <h2 id="配置执行文件"><a href="#配置执行文件" aria-hidden="true" class="header-anchor">#</a> 配置执行文件</h2> <p>工作当中我们打包编译的时候一般都执行npm run dev这样的命令，既然是通过npm执行的命令，我们就应该找到package.json里的执行脚本去配置一下命令</p> <p><strong>npm run build</strong>就是我们打包后的文件，这是生产环境下，上线需要的文件
+<strong>npm run dev</strong>是我们开发环境下打包的文件，当然由于devServer帮我们把文件放到内存中了，所以并不会输出打包后的dist文件夹
+通过npm run build之后会生成一个dist目录文件夹，就和上面打包后的样子一样了</p> <h2 id="多入口文件"><a href="#多入口文件" aria-hidden="true" class="header-anchor">#</a> 多入口文件</h2> <p>多个入口可以有两种实现方式进行打包</p> <ul><li>一种是没有关系的但是要打包到一起去的，可以写一个数组，实现多个文件打包</li> <li>另一种就是每一个文件都单独打包成一个文件的</li> <li>下面就来看看这两种方式的写法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let path = require('path');
+
+module.exports = {
+    // 1.写成数组的方式就可以打出多入口文件，不过这里打包后的文件都合成了一个
+    // entry: ['./src/index.js', './src/login.js'],
+    // 2.真正实现多入口和多出口需要写成对象的方式
+    entry: {
+        index: './src/index.js',
+        login: './src/login.js'
+    },
+    output: {
+        // 1. filename: 'bundle.js',
+        // 2. [name]就可以将出口文件名和入口文件名一一对应
+        filename: '[name].js',      // 打包后会生成index.js和login.js文件
+        path: path.resolve('dist')
+    }
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog-lijie/summary/webpack/webpack_loader.html">
+          loader和插件的使用
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog-lijie/assets/js/app.c84d788b.js" defer></script><script src="/blog-lijie/assets/js/2.06a6629a.js" defer></script><script src="/blog-lijie/assets/js/18.2c4a4640.js" defer></script>
+  </body>
+</html>

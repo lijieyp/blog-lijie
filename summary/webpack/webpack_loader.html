@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>loader和插件的使用 | 李杰的博客</title>
+    <meta name="description" content="Vuepress blog lijie">
+    
+    
+    <link rel="preload" href="/blog-lijie/assets/css/0.styles.9a23e2da.css" as="style"><link rel="preload" href="/blog-lijie/assets/js/app.c84d788b.js" as="script"><link rel="preload" href="/blog-lijie/assets/js/2.06a6629a.js" as="script"><link rel="preload" href="/blog-lijie/assets/js/19.6e587a7d.js" as="script"><link rel="prefetch" href="/blog-lijie/assets/js/10.cb311e20.js"><link rel="prefetch" href="/blog-lijie/assets/js/11.0cef8909.js"><link rel="prefetch" href="/blog-lijie/assets/js/12.68e0e621.js"><link rel="prefetch" href="/blog-lijie/assets/js/13.c86b31eb.js"><link rel="prefetch" href="/blog-lijie/assets/js/14.ba25eb8a.js"><link rel="prefetch" href="/blog-lijie/assets/js/15.2e339e9a.js"><link rel="prefetch" href="/blog-lijie/assets/js/16.0179fcb1.js"><link rel="prefetch" href="/blog-lijie/assets/js/17.bd1cbb62.js"><link rel="prefetch" href="/blog-lijie/assets/js/18.2c4a4640.js"><link rel="prefetch" href="/blog-lijie/assets/js/20.35183c29.js"><link rel="prefetch" href="/blog-lijie/assets/js/3.c699bf6b.js"><link rel="prefetch" href="/blog-lijie/assets/js/4.cd628cd7.js"><link rel="prefetch" href="/blog-lijie/assets/js/5.2933ec46.js"><link rel="prefetch" href="/blog-lijie/assets/js/6.a51c015f.js"><link rel="prefetch" href="/blog-lijie/assets/js/7.dc161ca2.js"><link rel="prefetch" href="/blog-lijie/assets/js/8.6fea0b04.js"><link rel="prefetch" href="/blog-lijie/assets/js/9.d59d0b22.js">
+    <link rel="stylesheet" href="/blog-lijie/assets/css/0.styles.9a23e2da.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog-lijie/" class="home-link router-link-active"><!----> <span class="site-name">李杰的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog-lijie/" class="nav-link">首页</a></div><div class="nav-item"><a href="/blog-lijie/summary/nginx/" class="nav-link">nginx</a></div><div class="nav-item"><a href="/blog-lijie/summary/webpack/" class="nav-link router-link-active">webpack</a></div><div class="nav-item"><a href="/blog-lijie/summary/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/blog-lijie/summary/vue/" class="nav-link">vue</a></div><div class="nav-item"><a href="/blog-lijie/summary/reprint/" class="nav-link">转载</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/npm/" class="nav-link">npm</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/plugins/" class="nav-link">插件</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/mianshi/" class="nav-link">面试</a></li></ul></div></div> <a href="https://github.com/lijieyp/blog-lijie" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog-lijie/" class="nav-link">首页</a></div><div class="nav-item"><a href="/blog-lijie/summary/nginx/" class="nav-link">nginx</a></div><div class="nav-item"><a href="/blog-lijie/summary/webpack/" class="nav-link router-link-active">webpack</a></div><div class="nav-item"><a href="/blog-lijie/summary/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/blog-lijie/summary/vue/" class="nav-link">vue</a></div><div class="nav-item"><a href="/blog-lijie/summary/reprint/" class="nav-link">转载</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">总结</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/npm/" class="nav-link">npm</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/plugins/" class="nav-link">插件</a></li><li class="dropdown-item"><!----> <a href="/blog-lijie/summary/mianshi/" class="nav-link">面试</a></li></ul></div></div> <a href="https://github.com/lijieyp/blog-lijie" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/blog-lijie/summary/webpack/" class="sidebar-link">webpack配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#运行" class="sidebar-link">运行</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#配置执行文件" class="sidebar-link">配置执行文件</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/#多入口文件" class="sidebar-link">多入口文件</a></li></ul></li><li><a href="/blog-lijie/summary/webpack/webpack_loader.html" class="active sidebar-link">loader和插件的使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#css样式处理" class="sidebar-link">CSS样式处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#插入到style标签" class="sidebar-link">插入到style标签</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#抽离单独css文件，link标签引入" class="sidebar-link">抽离单独css文件，link标签引入</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#添加css3前缀" class="sidebar-link">添加CSS3前缀</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#转化es6语法" class="sidebar-link">转化ES6语法</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#js语法校验" class="sidebar-link">js语法校验</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#全局变量引入问题" class="sidebar-link">全局变量引入问题</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#图片处理" class="sidebar-link">图片处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#页面img引用图片" class="sidebar-link">页面img引用图片</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#引用字体图片和svg图片" class="sidebar-link">引用字体图片和svg图片</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#清理dist目录" class="sidebar-link">清理dist目录</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#html插件" class="sidebar-link">html插件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#多页面开发，怎么配置多页面" class="sidebar-link">多页面开发，怎么配置多页面</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#html，css，js的代码压缩" class="sidebar-link">html，CSS，js的代码压缩</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#文件指纹的生成" class="sidebar-link">文件指纹的生成</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#js文件指纹的设置" class="sidebar-link">js文件指纹的设置</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#css文件指纹的设置" class="sidebar-link">css文件指纹的设置</a></li><li class="sidebar-sub-header"><a href="/blog-lijie/summary/webpack/webpack_loader.html#图片的文件指纹设置" class="sidebar-link">图片的文件指纹设置</a></li></ul></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="loader和插件的使用"><a href="#loader和插件的使用" aria-hidden="true" class="header-anchor">#</a> loader和插件的使用</h1> <h2 id="css样式处理"><a href="#css样式处理" aria-hidden="true" class="header-anchor">#</a> CSS样式处理</h2> <h3 id="插入到style标签"><a href="#插入到style标签" aria-hidden="true" class="header-anchor">#</a> 插入到style标签</h3> <div class="language- extra-class"><pre class="language-text"><code>npm i css-loader style-loader -D
+npm i less less-loader -D
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>let path = require('path');
+// 插件都是一个类，所以我们命名的时候尽量用大写开头
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        // 添加hash可以防止文件缓存，每次都会生成4位的hash串
+        filename: 'bundle.[hash:4].js',   
+        path: path.resolve('dist')
+    },
+	module:{//模块
+		rules:[
+			//css-loader 接续 @import这种语法的
+			//style-loader 他是把css插入到head标签中
+			//loader的特点 希望单一
+			//loader的用法 字符串只用一个loader
+			//多个loader需要[]
+			//loader的顺序 默认是从右向左执行
+			//loader还可以写成对象方式
+			{
+                test:/\.css$/,
+                use:[
+                    {
+						loader:'style-loader',
+						options:{
+							insertAt:'top'//css插入到html文档顶部
+						}
+                    },
+                    'css-loader'
+                ]
+            }，
+            //处理less
+            {
+                test:/\.less$/,
+                use:[
+                    {
+						loader:'style-loader',
+						options:{
+							insertAt:'top'//css插入到html文档顶部
+						}
+                    },
+                    'css-loader',
+                    'less-loader'
+                ]
+            }
+		]
+	}
+}
+</code></pre></div><h3 id="抽离单独css文件，link标签引入"><a href="#抽离单独css文件，link标签引入" aria-hidden="true" class="header-anchor">#</a> 抽离单独css文件，link标签引入</h3> <p><code>npm i mini-css-extract-plugin -D</code></p> <div class="language- extra-class"><pre class="language-text"><code>let MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        // 添加hash可以防止文件缓存，每次都会生成4位的hash串
+        filename: 'bundle.[hash:4].js',   
+        path: path.resolve('dist')
+    },
+    plugins: [
+        // 通过new一下这个类来使用插件
+        new MiniCssExtractPlugin({
+            filename:'css/main.css'
+        })
+    ],
+    module:{//模块
+		rules:[
+			{
+                test:/\.css$/,
+                use:[
+                    MiniCssExtractPlugin.loader
+                    'css-loader'
+                ]
+            }，
+            //处理less
+            {
+                test:/\.less$/,
+                use:[
+                    MiniCssExtractPlugin.loader
+                    'css-loader',
+                    'less-loader'
+                ]
+            }
+		]
+	}
+}
+</code></pre></div><h3 id="添加css3前缀"><a href="#添加css3前缀" aria-hidden="true" class="header-anchor">#</a> 添加CSS3前缀</h3> <p>通过postcss中的autoprefixer可以实现将CSS3中的一些需要兼容写法的属性添加响应的前缀，这样省去我们不少的时间</p> <p>由于也是一个loader加载器，我们也需要先安装一下</p> <div class="language-text extra-class"><pre class="language-text"><code>npm i postcss-loader autoprefixer -D
+</code></pre></div><p>安装后，我们还需要像webpack一样写一个config的配置文件，在项目根目录下创建一个<strong>postcss.config.js</strong>文件，配置如下：</p> <div class="language-text extra-class"><pre class="language-text"><code>module.exports = {
+    plugins: [require('autoprefixer')]  // 引用该插件即可了
+}
+</code></pre></div><p>然后在webpack里配置postcss-loader</p> <div class="language-text extra-class"><pre class="language-text"><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
+            }
+        ]
+    }
+}
+</code></pre></div><h2 id="转化es6语法"><a href="#转化es6语法" aria-hidden="true" class="header-anchor">#</a> 转化ES6语法</h2> <div class="language- extra-class"><pre class="language-text"><code>npm i babel-loader @babel/core @babel/preset-env -D
+npm i @babel/plugin-proposal-class-properties -D
+npm i @babel/plugin-proposal-decorators -D
+js异步语法转换
+npm i @babel/plugin-transform-runtime -D
+npm i @babel/runtime -S
+npm i @babel/polyfill -S  //include语法不识别
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: {
+                	loader:'babel-loader',
+                	options:{ //用babel-loader 需要把es6-es5
+                		presets:[
+                			'@babel/preset-env'
+                		],
+                		plugins:[ 
+                			'@babel/plugin-proposal-decorators' //装饰器语法
+                			'@babel/plugin-proposal-class-properties'//class语法转化
+                			'@babel/plugin-transform-runtime'
+                		]
+                	}
+                },
+                //包括什么目录
+                include:path.resolve(__dirname,'src')
+                //排除node_modules
+                exclude:/node_modules/
+            }
+        ]
+    }
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>module.exports = '11'
+require('@babel/polyfill')
+
+'aaa'.includes('a')
+</code></pre></div><h2 id="js语法校验"><a href="#js语法校验" aria-hidden="true" class="header-anchor">#</a> js语法校验</h2> <p>https://eslint.org/demo/    自定义语法校验最下面下载</p> <div class="language- extra-class"><pre class="language-text"><code>npm i eslint eslint-loader -D
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    module: {
+        rules: [
+        	{
+        		test:/\.js$/,
+        		use:{
+        			loader:'eslint-loader',
+        			options:{
+        				enforce:'pre'   //previous强制在其他loader之前执行 post强制之后
+        			}
+        		}
+        	},
+            {
+                test: /\.js$/, //normal  普通的loader
+                use: {
+                	loader:'babel-loader',
+                	options:{ //用babel-loader 需要把es6-es5
+                		presets:[
+                			'@babel/preset-env'
+                		],
+                		plugins:[ 
+                			'@babel/plugin-proposal-decorators' //装饰器语法
+                			'@babel/plugin-proposal-class-properties'//class语法转化
+                			'@babel/plugin-transform-runtime'
+                		]
+                	}
+                },
+                //包括什么目录
+                include:path.resolve(__dirname,'src')
+                //排除node_modules
+                exclude:/node_modules/
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id="全局变量引入问题"><a href="#全局变量引入问题" aria-hidden="true" class="header-anchor">#</a> 全局变量引入问题</h3> <p>expose-loader 暴露 全局的loader 内联的loader</p> <div class="language- extra-class"><pre class="language-text"><code>npm i expose-loader -D
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>import $ from 'expose-loader?$!jquery' //把$暴露到window
+console.log(window.$)
+</code></pre></div><p>或</p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    module: {
+        rules: [
+        	{
+        		test:require.resolve('jquery'),
+        		use:'expose-loader?$'
+        	}
+        ]
+    }
+}
+</code></pre></div><p>给每个模块注入$</p> <div class="language- extra-class"><pre class="language-text"><code>let webpack = require('webpack')
+
+module.exports = {
+    plugins:[
+    	new webpack.ProvidePlugin({//在每个模块都注入$
+    		$:'jquery'
+    	})
+    ]
+}
+</code></pre></div><h2 id="图片处理"><a href="#图片处理" aria-hidden="true" class="header-anchor">#</a> 图片处理</h2> <div class="language- extra-class"><pre class="language-text"><code>npm i file-loader url-loader -D
+</code></pre></div><p>如果是在css文件里引入的如背景图之类的图片，就需要指定一下相对路径</p> <div class="language-text extra-class"><pre class="language-text"><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ExtractTextWebpackPlugin.extract({
+                    use: 'css-loader',
+                    publicPath: '../'
+                })
+            },
+            {
+                test: /\.(jpe?g|png|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,    // 小于8k的图片自动转成base64格式，并且不会存在实体图片
+                            outputPath: '/images/',   // 图片打包后存放的目录
+                            publicPath:'http://www.dd.com' //在所有img标签前加路径
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id="页面img引用图片"><a href="#页面img引用图片" aria-hidden="true" class="header-anchor">#</a> 页面img引用图片</h3> <p>页面中经常会用到img标签，img引用的图片地址也需要一个loader来帮我们处理好</p> <div class="language-text extra-class"><pre class="language-text"><code>npm i html-withimg-loader -D
+</code></pre></div><div class="language-text extra-class"><pre class="language-text"><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.(htm|html)$/,
+                use: 'html-withimg-loader'
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id="引用字体图片和svg图片"><a href="#引用字体图片和svg图片" aria-hidden="true" class="header-anchor">#</a> 引用字体图片和svg图片</h3> <p>字体图标和svg图片都可以通过file-loader来解析</p> <div class="language-text extra-class"><pre class="language-text"><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.(eot|ttf|woff|svg)$/,
+                use: 'file-loader'
+            }
+        ]
+    }
+}
+</code></pre></div><p>这样即使样式中引入了这类格式的图标或者图片都没有问题了，img如果也引用svg格式的话，配合上面写好的html-withimg-loader就都没有问题了</p> <h2 id="清理dist目录"><a href="#清理dist目录" aria-hidden="true" class="header-anchor">#</a> 清理dist目录</h2> <p>在我们每次npm run build的时候都会在dist目录下创建很多打好的包，如果积累过多可能也会混乱</p> <p>所以应该在每次打包之前将dist目录下的文件都清空，然后再把打好包的文件放进去</p> <p>这里提供一个clean-webpack-plugin插件</p> <div class="language-text extra-class"><pre class="language-text"><code>npm i clean-webpack-plugin -D
+</code></pre></div><div class="language-text extra-class"><pre class="language-text"><code>let CleanWebpackPlugin = require('clean-webpack-plugin');
+
+module.exports = {
+    plugins: [
+        // 打包前先清空
+        new CleanWebpackPlugin('dist')  
+    ]
+}
+</code></pre></div><h2 id="html插件"><a href="#html插件" aria-hidden="true" class="header-anchor">#</a> html插件</h2> <p>文件都打包好了，但是我们在使用的时候不能在dist目录下去创建一个html文件，然后去引用打包后的js吧，这不合理，实际开发中也不会这样 我们需要实现html打包功能，可以通过一个模板实现打包出引用好路径的html来 这就需要用到一个常用的插件了，html-webpack-plugin，用之前我们来安一下它</p> <div class="language- extra-class"><pre class="language-text"><code>npm i html-webpack-plugin -D
+</code></pre></div><p>因为是个插件，所以需要在config.js里引用一下的</p> <div class="language- extra-class"><pre class="language-text"><code>let path = require('path');
+// 插件都是一个类，所以我们命名的时候尽量用大写开头
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        // 添加hash可以防止文件缓存，每次都会生成4位的hash串
+        filename: 'bundle.[hash:4].js',   
+        path: path.resolve('dist')
+    },
+    plugins: [
+        // 通过new一下这个类来使用插件
+        new HtmlWebpackPlugin({
+            // 用哪个html作为模板
+            // 在src目录下创建一个index.html页面当做模板来用
+            template: './src/index.html',
+            filename:'index.html',
+            hash: true, // 会在打包好的bundle.js后面加上hash串
+            minify:{
+            	removeAttributeQuotes:true,//去除html双引号
+            	collapseWhitespace：true //html压缩成一行
+            }
+        })
+    ]
+}
+</code></pre></div><h3 id="多页面开发，怎么配置多页面"><a href="#多页面开发，怎么配置多页面" aria-hidden="true" class="header-anchor">#</a> 多页面开发，怎么配置多页面</h3> <p>如果开发的时候不只一个页面，我们需要配置多页面，那么需要怎么来搞呢？不用担心，html-webpack-plugin插件自有办法，我们来观望一下</p> <div class="language- extra-class"><pre class="language-text"><code>let path = require('path');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    // 多页面开发，怎么配置多页面
+    entry: {
+        index: './src/index.js',
+        login: './src/login.js'
+    },
+    // 出口文件  
+    output: {                       
+        filename: '[name].js',
+        path: path.resolve('dist')
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html',   
+            filename: 'index.html',
+            chunks: ['index']   // 对应关系,index.js对应的是index.html
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/login.html',
+            filename: 'login.html',
+            chunks: ['login']   // 对应关系,login.js对应的是login.html
+        })
+    ]
+}
+</code></pre></div><h2 id="html，css，js的代码压缩"><a href="#html，css，js的代码压缩" aria-hidden="true" class="header-anchor">#</a> html，CSS，js的代码压缩</h2> <p><strong>html压缩见html-webpack-plugin</strong></p> <div class="language- extra-class"><pre class="language-text"><code>npm i optimize-css-assets-webpack-plugin -D
+npm i uglifyjs-webpack-plugin -D
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>let OptimizeCss = require('optimize-css-assets-webpack-plugin')
+let UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+module.exports = {
+	optimization:{//优化项
+		minimizer:[
+			new UglifyJsPlugin({
+				cache:true,
+				parallel:true,
+				sourceMap:true
+			})//webpack4.0自动配置，不需要单独安装
+			new OptimizeCss({
+				assetNameRegExp:/\.css$/g,
+				cssProcessor:require('cssnano') //cnpm i cssnano -D
+			}) //用后js就压缩也许无效，必须配置uglify.js
+		]
+	}
+}
+</code></pre></div><h2 id="文件指纹的生成"><a href="#文件指纹的生成" aria-hidden="true" class="header-anchor">#</a> 文件指纹的生成</h2> <p>Hash:和整个项目的构建相关，只要项目文件有修改，整个项目构建的hash值就会更改</p> <p>Chunkhash:和webpack打包的chunk有关，不同的entry会生成不同的chunkhash值</p> <p>Contenthash:根据文件内容来定义hash，文件内容不变，则contenthash不变</p> <h3 id="js文件指纹的设置"><a href="#js文件指纹的设置" aria-hidden="true" class="header-anchor">#</a> js文件指纹的设置</h3> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    // 多页面开发，怎么配置多页面
+    entry: {
+        index: './src/index.js',
+        login: './src/login.js'
+    },
+    // 出口文件  
+    output: {                       
+        filename: '[name][chunkhash:8].js',
+        path: __dirname+'/dist'
+    },
+}
+</code></pre></div><h3 id="css文件指纹的设置"><a href="#css文件指纹的设置" aria-hidden="true" class="header-anchor">#</a> css文件指纹的设置</h3> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    // 多页面开发，怎么配置多页面
+    entry: {
+        index: './src/index.js',
+        login: './src/login.js'
+    },
+    // 出口文件  
+    output: {                       
+        filename: '[name][chunkhash:8].js',
+        path: __dirname+'/dist'
+    },
+    plugins: [
+        new MiniCssExtractPlugin({  
+            filename: '[name][contenthash:8].css',
+        })
+    ]
+}
+</code></pre></div><h3 id="图片的文件指纹设置"><a href="#图片的文件指纹设置" aria-hidden="true" class="header-anchor">#</a> 图片的文件指纹设置</h3> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    // 多页面开发，怎么配置多页面
+    entry: './src/index.js',
+    // 出口文件  
+    output: {                       
+        filename: 'bundle.js',
+        path: __dirname+'/dist'
+    },
+    module:{
+    	rules:[
+    		{
+    			test:/\.(png|svg|jpg|gif)$/,
+    			use:[{
+    				loader:'file-loader',
+    				options:{
+    					name:'img/[name][hash:8].[ext]'
+    				}
+    			}]
+    		}
+    	]
+    }
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog-lijie/summary/webpack/" class="prev router-link-active">
+          webpack配置
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog-lijie/assets/js/app.c84d788b.js" defer></script><script src="/blog-lijie/assets/js/2.06a6629a.js" defer></script><script src="/blog-lijie/assets/js/19.6e587a7d.js" defer></script>
+  </body>
+</html>
